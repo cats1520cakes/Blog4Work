@@ -1,0 +1,59 @@
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #10b981;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --gray: #94a3b8;
+  --glass: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b);color:var(--light);margin:0;line-height:1.6;min-height:100vh;overflow-x:hidden;background-attachment:fixed;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+/* ——导航 & 动画省略—— 将用户原 CSS 粘贴即可 —— */
+
+/* 只保留 iframe 自适应 */
+.chat-iframe{width:100%;height:100%;min-height:700px;border:none;}
+
+/* 1️⃣ 容器：启用纵向强制吸附 */
+.snap-container {
+  height: 100vh;              /* 让容器本身铺满视口并可滚动 */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;    /* 手动拖动或锚点都平滑 */
+}
+
+/* 2️⃣ 每一屏：对齐到顶部 */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;   /* 防止用户半途停留下来 */
+  min-height: 100vh;
+  display: flex;              /* 可自由居中内容 */
+  flex-direction: column;
+}
+
+
+section#experience {
+  scroll-margin-top: 100px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary); /* 鼠标悬停变为主色 */
+}
+
+.nav-link.active {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
