@@ -1,10 +1,10 @@
-import { experiences } from '@/data/experience';
+import { experiences_content } from '@/data/experience_content';
 import React from 'react';
 
 export default function Timeline() {
   return (
     <div className="timeline">
-      {experiences.map((e, idx) => (
+      {experiences_content.map((e, idx) => (
         <div
           key={idx}
           className={`item ${idx % 2 === 0 ? 'left' : 'right'}`}

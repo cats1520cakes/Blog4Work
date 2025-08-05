@@ -19,6 +19,7 @@ export default function Navbar() {
           {link('/experience', '个人经历')}
           {link('/blog', '博客')}
           {link('/ai-chat', 'AI 对话')}
+          {link('/papers','论文项目')}
 
         </nav>
       </div>
