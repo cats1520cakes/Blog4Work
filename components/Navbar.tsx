@@ -20,6 +20,8 @@ export default function Navbar() {
           {link('/blog', '博客')}
           {link('/ai-chat', 'AI 对话')}
           {link('/papers','论文项目')}
+          {link('/play/bacon','扔培根小游戏')}
+          {link('/play/flashcards','闪记卡')}
 
         </nav>
       </div>

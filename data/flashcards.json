@@ -1,0 +1,195 @@
+[
+  {
+    "id": 1,
+    "question": "DNS 的作用是什么？解析流程核心步骤有哪些？",
+    "answer": "DNS 将域名映射到 IP。递归解析常见流程：\n1) 客户端向本地 DNS 递归查询；\n2) 本地 DNS 迭代向根 → 顶级域 → 权威服务器查询 NS/A 记录；\n3) 拿到权威记录后返回给本地 DNS，再返回给客户端并按 TTL 缓存。",
+    "tags": [
+      "计算机网络",
+      "DNS"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "HTTP 与 HTTPS 的主要差异？",
+    "answer": "HTTPS = HTTP over TLS，增加：机密性（对称加密）、完整性（MAC/AEAD）、身份认证（证书）。代价：握手开销、证书管理、可能的 CPU/延迟开销。",
+    "tags": [
+      "计算机网络",
+      "HTTP",
+      "TLS"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "TCP 三次握手的目的？四次挥手为什么是四次？",
+    "answer": "三次握手：确认双方收发能力与初始序列号，避免旧连接报文造成混淆。\n四次挥手：因为关闭是半关闭语义，FIN 与 ACK 分别独立确认，两端各完成一轮。",
+    "tags": [
+      "计算机网络",
+      "TCP"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "常见的 HTTP 请求头与响应头各举 3 个并说明用途。",
+    "answer": "请求头：\n- Host：虚拟主机路由；\n- User-Agent：客户端标识；\n- Accept/Content-Type：内容协商。\n响应头：\n- Cache-Control：缓存策略；\n- Set-Cookie：设置 cookie；\n- Location：重定向。",
+    "tags": [
+      "计算机网络",
+      "HTTP"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "TCP 的流量控制与拥塞控制的差异？",
+    "answer": "流量控制：端到端，防止接收端被淹没（滑动窗口/接收窗口）。\n拥塞控制：网络级别，防止链路拥塞（慢启动、拥塞避免、快速重传/恢复、CUBIC 等）。",
+    "tags": [
+      "计算机网络",
+      "TCP"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Cookie 与 Session 的区别？",
+    "answer": "Cookie 存在客户端（浏览器）的小型键值对；Session 存在服务端（或集中存储），客户端通过 Cookie（如 SessionID）关联。\nCookie 用于状态保持/个性化；Session 用于服务端会话状态。",
+    "tags": [
+      "计算机网络",
+      "HTTP",
+      "Cookie"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "SSL 与 TLS 的关系？",
+    "answer": "TLS 是 SSL 的后续标准（SSL 3.0 之后演进为 TLS 1.0+）。现代使用 TLS 1.2/1.3；SSL 已弃用。",
+    "tags": [
+      "计算机网络",
+      "TLS"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "中断（Interrupt）与异常（Exception）的区别？",
+    "answer": "中断：来自外设/硬件的异步事件；异常：执行指令过程中的同步事件（如缺页、非法指令）。二者都会陷入内核，由不同向量处理。",
+    "tags": [
+      "操作系统"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "用户态与内核态的区别？为什么要区分？",
+    "answer": "内核态拥有特权可访问所有资源；用户态受限。区分是为了隔离故障与提升安全性、稳定性，通过系统调用作为受控入口切换态。",
+    "tags": [
+      "操作系统"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "并行与并发的区别？",
+    "answer": "并行：同一时刻多任务同时执行（多核/多处理器）。并发：在时间上交错推进逻辑并行（单核也可）。",
+    "tags": [
+      "操作系统"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "锁与死锁：什么是死锁？如何避免？",
+    "answer": "死锁：一组进程互相等待彼此持有的资源而永不前进。避免：破坏四要素之一（互斥、占有且等待、不可抢占、循环等待），如资源有序分配、超时/重试、死锁检测与恢复。",
+    "tags": [
+      "操作系统",
+      "并发"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Linux 常见文件/目录操作命令？",
+    "answer": "ls、cd、pwd、mkdir、rmdir、cp、mv、rm、touch、cat、less、head、tail、find、grep、chmod、chown、ln 等。",
+    "tags": [
+      "Linux",
+      "命令"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "如何用命令查找包含关键字的文件并按行号显示？",
+    "answer": "grep -rn --color 'keyword' ./path\n-r 递归，-n 显示行号，--color 高亮。",
+    "tags": [
+      "Linux",
+      "命令"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "如何查看进程/端口占用并结束进程？",
+    "answer": "ps aux | grep name\ntop/htop 实时查看\nlsof -i :PORT 或 ss -lntp\nkill -9 PID（谨慎），或 kill PID 发送 SIGTERM。",
+    "tags": [
+      "Linux",
+      "进程",
+      "网络"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "索引的作用与代价？",
+    "answer": "作用：加速查询、减少 I/O。\n代价：占空间；写入/更新需要维护索引；不当选择可能导致优化器误判。常见：B+Tree、Hash。",
+    "tags": [
+      "SQL",
+      "索引"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "事务的 ACID 特性？",
+    "answer": "Atomicity、Consistency、Isolation、Durability。隔离级别：读未提交、读已提交、可重复读、可串行化；对应问题：脏读、不可重复读、幻读。",
+    "tags": [
+      "SQL",
+      "事务"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "数据库中的锁类型与粒度？",
+    "answer": "共享锁/排他锁、意向锁；行锁/页锁/表锁；悲观锁/乐观并发控制（版本号、时间戳）。",
+    "tags": [
+      "SQL",
+      "锁"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "测试金字塔与典型测试类型？",
+    "answer": "底部单元测试（快、量大），中层服务/集成测试，顶部端到端/E2E 测试（少而关键）。另有性能、安全、兼容、回归测试等。",
+    "tags": [
+      "测试"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Mock 与 Stub 的区别？",
+    "answer": "Stub 返回预设数据以便隔离被测对象；Mock 则还校验交互（调用次数、参数）。",
+    "tags": [
+      "测试"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "大语言模型的预训练目标是什么？",
+    "answer": "常见是自回归语言建模（预测下一个 token）或自编码器目标（如掩码语言模型）。",
+    "tags": [
+      "大模型"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "为什么要做指令微调与对齐？",
+    "answer": "为了让模型遵循指令、降低有害输出并提升可用性；方法包括 SFT、RLHF、DPO、RLAIF 等。",
+    "tags": [
+      "大模型"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Top-k / Top-p 采样是什么？",
+    "answer": "Top-k：在概率前 k 的候选上归一化采样；Top-p（核采样）：在累积概率达到 p 的子集中采样。控制多样性与稳定性。",
+    "tags": [
+      "大模型"
+    ]
+  }
+]

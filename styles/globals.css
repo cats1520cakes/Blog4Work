@@ -1,16 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
+  --primary: #7072f7;
+  --primary-dark: #a09bf0;
   --secondary: #10b981;
-  --dark: #1e293b;
+  --dark: #314e63;
   --light: #f8fafc;
   --gray: #94a3b8;
   --glass: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.1);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --border: rgba(255, 255, 255, 0.609);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.067);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b);color:var(--light);margin:0;line-height:1.6;min-height:100vh;overflow-x:hidden;background-attachment:fixed;}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#172036,#182e2a);color:var(--light);margin:0;line-height:1.6;min-height:100vh;overflow-x:hidden;background-attachment:fixed;}
 .container{max-width:1200px;margin:0 auto;padding:0 20px;}
 /* ——导航 & 动画省略—— 将用户原 CSS 粘贴即可 —— */
 
@@ -57,3 +61,11 @@ section#experience {
   background-clip: text;
   color: transparent;
 }
+
+.card{
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
